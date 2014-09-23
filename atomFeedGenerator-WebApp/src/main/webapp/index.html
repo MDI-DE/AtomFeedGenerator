@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   
+<html>
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+	<meta name="description" content="INSPIRE Atom Feed Service"/>
+	<meta name="keywords " content="INSPIRE, predefined, ATOM, Atom, DatasetFeed, ServiceFeed, Annex, Opensearch, Metadata, CSW, MDI-DE, Lücker, Räder"/>
+	<meta name="author" content="Mathias Lücker, Michael Räder"/>
+	<meta http-equiv="Content-Language" content="en-DE"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" /> <!-- IE 8 Compatibility -->
+	
+	<title>INSPIRE Service-Atom-Feed Client</title>
+	  
+	<!-- ********************** -->
+	<!-- Hier können Sie auf das Eigene Logo verweisen -->
+	<!-- ********************** -->
+	<!--	<link rel="shortcut icon" href="" type="image/x-icon" /> -->
+   
+	<!-- ********************** -->
+	<!-- Javascript für die Erzeugung der Tabellen -->
+	<!-- ********************** -->
+	<script type="text/javascript" src="/atomFeed/javascript/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/dataTables.fnAjaxReload.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/proj4js/proj4js-compressed.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/proj4js/defs/EPSG25832.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/proj4js/projCode/tmerc.js"></script>
+	<script type="text/javascript" src="/atomFeed/javascript/OpenLayers/OpenLayers.js"></script>
+		
+	<!-- ********************** -->
+	<!--  CSS -->
+	<!-- ********************** -->	
+	<link rel="stylesheet" href="/atomFeed/css/dataset_table.css" />
+	<link rel="stylesheet" href="/atomFeed/css/atom_feed.css" />
+		
+	<!-- ********************** -->
+	<!--  Einbinden von eigenen .css Dateien für Logos etc. -->
+	<!-- ********************** -->
+	<!--	<link rel="stylesheet" href=""> -->
+</head>
+<body>
+	<script  type="text/javascript" src="/atomFeed/javascript/app.js"></script>
+		
+	<!-- ********************** -->
+	<!-- Ab hier default -->
+	<!-- ********************** -->	
+	<div id="intro">
+		<p>
+			Verfügbare INSPIRE pre-defined Atom Datensätze:
+		</p>
+		<select id="select_service">
+				<option value="999999">Wählen Sie einen Downloaddienst</option>
+		</select>
+	</div>
+	
+	<!-- ************************************************************ -->
+	<!-- Ausgabe aus deN Service Datasets (siehe auch "javascript/app.js") -->
+	<!-- Elemente können erweitert oder getauscht werden -->
+	<!-- ************************************************************ -->	
+	
+	<div id="dynamic">
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="datasets">
+			<thead>
+				<tr>
+					<th width="5%" id="detail">Detail</th>
+					<th width="35%">Titel des Datensatzes</th>
+					<th width="7%">Projektion (EPSG-Code)</th>
+					<th width="12%">Ausgabeformat</th>
+					<th width="26%">Datenoriginator</th>
+					<th width="15%">Identifikator</th>
+				</tr>
+			</thead>
+			<tbody>		
+			</tbody>
+		</table>
+	</div>
+	
+	
+	<div id="service-feeds">
+		<p>
+			Verfügbare INSPIRE pre-defined Atom Download Service Feeds:
+		</p>
+	</div>
+	<div id="service-feeds-list">
+		<ul id="feed-list">
+		</ul>
+	</div>
+</body>
+</html>

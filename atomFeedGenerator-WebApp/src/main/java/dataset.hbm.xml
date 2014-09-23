@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="mdide.model">
+
+    <class name="Dataset" table="datasets">
+        <id name="id" column="DATASET_ID">
+            <generator class="increment"/>
+        </id>
+		<property name="uuid"/>
+        <property name="crs"/>
+        <property name="namespace"/>
+        <property name="datalink"/>
+        <property name="language"/>
+        <property name="browseGraphic"/>
+        <property name="bbox"/>
+        <property name="type"/>
+        <property name="title"/>
+        <property name="description" length="3999" />
+        <property name="serviceId"/>
+        <property name="rights"/>
+        <property name="organisation"/>
+    </class>
+
+</hibernate-mapping>

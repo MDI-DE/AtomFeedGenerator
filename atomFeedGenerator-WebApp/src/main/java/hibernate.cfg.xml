@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">	
+	<!-- 
+	Autoren: Mathias Luecker, Michael Raeder
+	MDI-DE - Marine Dateninfrastruktur Deutschland
+	http://www.mdi-de.org
+	Datum: 14.06.2013 
+	-->
+<hibernate-configuration>
+    <session-factory>
+<!-- ######################### -->
+<!-- Standard: H2 Datenbank    -->
+<!-- ######################### -->
+ 		
+		<property name="hibernate.connection.driver_class">org.h2.Driver</property>
+		<property name="hibernate.connection.url">jdbc:h2:file:webapps/atomFeed/Datenbank/atomfeed;AUTO_SERVER=TRUE</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.default_schema">PUBLIC</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+		
+ <!-- ############################################################################################################################ -->
+		
+<!-- ##################-->		
+<!-- Dummy PostgresSQL -->
+<!-- ################# -->
+        <!--  
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://[host]:[port]/[DB]</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		-->
+ <!-- ############################################################################################################################ -->	
+
+<!-- ##################### -->
+<!-- Dummy MSSQL Server    -->
+<!-- ##################### --> 
+
+       <!--  <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://{IP/Domäne}:{Port};databaseName={NAME_DER_DATENBANK};instanceName={NAME_DER_INSTANZ}</property>
+        <property name="connection.username">{BENUTZERNAME}</property>
+        <property name="connection.password">{Passwort}</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property> -->
+		
+<!-- ############################################################################################################################ -->	
+
+<!-- ############################################################################################################################ -->
+		
+	<!-- ### JDBC connection pool (use the built-in) für Datenbanktypen mit JDBC ### -->
+        <property name="connection.pool_size">1</property>
+		
+<!-- ############################### -->
+<!-- Einstellungen für alle DB Typen -->
+<!-- ############################### -->	
+		
+	<!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+    <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+    <!-- Funktion für das Anlegen des Schemas in der DB beim starten des Tomcats -->
+	<!-- Für das erste muss zwingend "create" gewählt werden -->
+        <property name="hbm2ddl.auto">create</property>
+	<!-- Für den Funktionalen Einsatz (nach einmaligem Anlegen des Schemas)wird "validate" empfohlen -->
+		<!-- <property name="hbm2ddl.auto">validate</property> -->
+		
+	<!-- Mapping Schemen für die Daten- und Service- Einträge in der Datenbank -->
+        <mapping resource="dataset.hbm.xml"/>
+		<mapping resource="service.hbm.xml"/>
+    </session-factory>  
+</hibernate-configuration>

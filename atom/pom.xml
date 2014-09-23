@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.mdi.afg</groupId>
+    <artifactId>atomFeedGenerator</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>atom</artifactId>
+  <version>1.0.0</version>
+  <name>atom</name>
+  
+  <dependencyManagement>
+    <dependencies>
+    <dependency>
+		<groupId>org.apache.xmlbeans</groupId>
+		<artifactId>xmlbeans</artifactId>
+		<version>2.6.0</version>
+	</dependency>
+  </dependencies>
+ </dependencyManagement>  
+  
+  <build>
+  	<pluginManagement>
+	  	<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xmlbeans-maven-plugin</artifactId>
+				<version>2.3.3</version>
+				 <executions>
+			       <execution>
+			          <goals>
+			             <goal>xmlbeans</goal>
+			          </goals>
+			       </execution>
+			    </executions>
+				<inherited>true</inherited>
+				<configuration>
+					 <sourceSchemas>
+						<sourceSchema>src/main/xsd/atom.xsd</sourceSchema>
+					</sourceSchemas>
+				</configuration>
+				</plugin>
+	       </plugins>
+       </pluginManagement>
+	</build>  
+</project>

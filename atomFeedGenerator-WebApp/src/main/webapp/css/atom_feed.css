@@ -1,0 +1,82 @@
+ body {
+ 	margin-top: 1em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+ }
+select#select_service{
+	margin-bottom: 30px;
+	padding:3px;
+	width: 95%;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+    background: #f8f8f8;
+    border:1px solid grey;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+div#dynamic {
+	text-align: center;
+	display: block;
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid grey;
+			border-radius:	4px;
+	-webkit-border-radius:	4px;
+	   -moz-border-radius:	4px;
+		-ms-border-radius:	4px;
+		 -o-border-radius:	4px; 
+				box-shadow: 3px 3px 3px #ccc;
+		-webkit-box-shadow: 3px 3px 3px #ccc;
+		   -moz-box-shadow: 3px 3px 3px #ccc;
+			-ms-box-shadow:	3px 3px 3px #ccc;
+			 -o-box-shadow:	3px 3px 3px #ccc;
+	padding: 5px 5px 25px 5px;
+	font-size: 0.8em; 
+}
+div#intro {
+	text-align: center;
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+ul#feed-list {
+    list-style-type: url(../images/Pfeil.png);
+	list-style-image: url(../images/Pfeil.png);
+	line-height:2em;
+}
+
+
+div#service-feeds {
+	display: block;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 30px;
+}
+div#service-feeds-list {
+	width: 95%;
+	margin-left: auto ;
+	margin-right: auto ;
+	border: 1px solid grey;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+    -moz-box-shadow: 3px 3px 3px #ccc;
+    box-shadow: 3px 3px 3px #ccc;
+	padding: 5px 5px 5px 5px;
+	font-size: 0.8em; 
+}
+table td{
+	text-align: left;
+}

@@ -1,0 +1,13 @@
+*.class
+*.xml.OUT
+
+.project
+*/.settings/**
+.classpath
+*.prefs
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*/target/**
